@@ -2,12 +2,12 @@
 
 
 
-### Purpose
+### 🟦 Purpose
 MARL 알고리즘 중 **MAAC**를 활용하여 효과적인 투자 기법을 학습하는 것을 목표로 합니다. 또한 한국투자증권 API를 활용하여 실질적인 투자에도 적용할 수 있도록 설계하였습니다.
 
 ---
 
-### Background
+### 🟦 Background
 기존에도 강화학습을 주식투자에 접목하려는 시도는 많았습니다. 하지만 대부분 몇 가지 한계점들을 가지고 있습니다.
 
 - **offline learning** : 과거 데이터만을 사용해 실시간 학습이 불가능했습니다 
@@ -17,25 +17,24 @@ MARL 알고리즘 중 **MAAC**를 활용하여 효과적인 투자 기법을 학
 - **dimension exploding** : 단일 에이전트 강화학습은 특정 주식에 대한 최적화만 이루어져 실제 포트폴리오 관리와는 거리가 있었습니다..
 - **활용성** : 실제 투자 환경이 아닌 시뮬레이션과 백테스팅에만 의존하는 경우가 많습니다.
 
+
 ---
-### 과거 프로젝트 
-- [연속적 행동 기반 강화학습 주식 에이전트 ](https://github.com/Sigma-Flip/StockTrading_SoftActorCritic_KR_EN)
----
-### Key Improvements and Features
+### 🟦 Key Improvements and Features
 - **Online Learning**: online learning을 통해 실시간 학습이 가능하도록 하였습니다.
 
 - **Observation Space**: OHLCV뿐만 아니라, 현재가, PER, PBR, 누적 거래량, 외국인 보유 수량 등 30개 이상의 차원으로 확장하였습니다.
 -  **Action Space** :  Discrete Action Space로 설정하고, MAAC를 활용하여 차원이 선형적으로 증가하도록 만들었습니다.
 - 한국투자증권 API(mojito)를 사용하여 실제 투자에 활용할 수 있도록 구현하였습니다.
 ---
-### Core Sturcture 
+### 🟨 Core Sturcture 
 - `Central Critic`  : Multihead attention 활용, actions에 대한 values 계산
 - `Discrete Policy`   : 각 agents의 action 출력
 - `target critic, target policies`   : critic 과 policies 의 안정적 학습 
 - `Replay Buffer`   : *S, A, R, S_* 를 저장, 추후에 모델 학습에 활용
 
+---
 
-### Stock Market Environment
+### 🟨 Stock Market Environment
 MARL에서의 환경(Environment)은 크게 세 가지로 나눌 수 있습니다.
 
 1. **Cooperative Environment**: 에이전트들이 협력하여 최적의 행동을 학습합니다 (Maximize long-term return).
@@ -48,14 +47,20 @@ MARL에서의 환경(Environment)은 크게 세 가지로 나눌 수 있습니�
 
 ---
 
-### Reward
+### 🟨 Reward
 많은 MARL, 특히 Cooperative RL의 문제는 보상 측정입니다. 여러 에이전트의 행동에 대해 하나의 공통 보상을 설정하는 경우가 많습니다. 보통 **Joint Reward**를 활용해 Advantage Reward를 측정합니다. 하지만 주식시장은 각 주식이 개별적인 보상을 가지므로, Competitive-Cooperative 환경에서는 **Individual Reward**가 적합합니다. 코드에서는 이를 **Sub Reward**로 정의하고 그대로 활용합니다.
 
 ---
 
-### Multi-Head Attention
+### 🟨 Multi-Head Attention
 MARL의 핵심 과제 중 하나는 에이전트 간의 상호작용입니다. 축구에서 팀 플레이로 골을 넣듯이, 에이전트들끼리도 Observation이나 Action을 공유할 필요가 있습니다. 본 코드는 **Central Critic**에 **Multi-Head Attention**을 활용하여 이를 구현하였습니다.
 
+---
+
+
+###  과거 프로젝트 
+- [연속적 행동 기반 강화학습 주식 에이전트 ](https://github.com/Sigma-Flip/StockTrading_SoftActorCritic_KR_EN)
+  
 ---
 
 ### 🔔 Future Improvements
