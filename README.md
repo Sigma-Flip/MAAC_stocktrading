@@ -18,7 +18,9 @@ MARL 알고리즘 중 **MAAC**를 활용하여 효과적인 투자 기법을 학
 - **활용성** : 실제 투자 환경이 아닌 시뮬레이션과 백테스팅에만 의존하는 경우가 많습니다.
 
 ---
-
+### 과거 프로젝트 
+- [연속적 행동 기반 강화학습 주식 에이전트 ](https://github.com/Sigma-Flip/StockTrading_SoftActorCritic_KR_EN)
+---
 ### Key Improvements and Features
 - **Online Learning**: online learning을 통해 실시간 학습이 가능하도록 하였습니다.
 
@@ -64,8 +66,8 @@ MARL의 핵심 과제 중 하나는 에이전트 간의 상호작용입니다. �
 ---
 
 ### 🔔 Notifications
-- 현재 **mojito** 모듈에서 Key Error가 발생하여 코드가 실행이 되지 않는 문제가 있습니다. 이는 mojito 자체의 오류입니다.
-- 코드를 실행하기 위해서는 한국투자증권 회원가입, 계좌 개설 및 Key 발급이 필요합니다.
+- ### 현재 **mojito** 모듈에서 Key Error가 발생하여 코드가 실행이 되지 않는 문제가 있습니다!!! 이는 mojito 자체의 오류입니다.
+- ### 코드를 실행하기 위해서는 한국투자증권 회원가입, 계좌 개설 및 Key 발급이 필요합니다!!!
 
 ---
 
